@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisma Hidroponik - Solusi Urban Farming</title>
+    <style>
+        /* Reset dan font dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif; /* Font mudah dibaca */
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4; /* Latar belakang putih keabu-abuan */
+        }
+        /* Warna dominan: hijau (#4CAF50), putih (#fff), biru (#2196F3) */
+
+        /* Navbar */
+        nav {
+            background-color: #4CAF50; /* Hijau */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+        nav li {
+            margin: 0 1rem;
+        }
+        nav a {
+            color: #fff; /* Putih */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s; /* Animasi hover */
+        }
+        nav a:hover {
+            color: #2196F3; /* Biru */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #4CAF50, #2196F3); /* Gradien hijau ke biru */
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px; /* Padding atas untuk navbar fixed */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero button {
+            background-color: #fff;
+            color: #4CAF50;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        /* Sections umum */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s; /* Animasi fade dan slide */
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #4CAF50;
+        }
+        section p, section ul {
+            margin-bottom: 1rem;
+        }
+        section ul {
+            list-style: disc;
+            padding-left: 2rem;
+        }
+
+        /* Galeri */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Kontak */
+        .contact {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+        }
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact input, .contact textarea, .contact button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 4px;
+        }
+        .contact button {
+            background-color: #2196F3;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 0.5rem 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#hidroponik">Sistem Hidroponik</a></li>
+            <li><a href="#proses">Proses Penanaman</a></li>
+            <li><a href="#pemasaran">Pemasaran</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Bisma Hidroponik</h1>
+        <p>Solusi Urban Farming di Tengah Kota</p>
+        <button onclick="scrollToSection('tentang')">Pelajari Lebih Lanjut</button>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>Bisma Hidroponik adalah usaha yang fokus pada penerapan sistem hidroponik di lingkungan perkotaan. Kami berkomitmen untuk mempromosikan pertanian berkelanjutan dengan memanfaatkan lahan sempit di tengah kota, sehingga masyarakat dapat menikmati hasil panen segar tanpa perlu lahan luas.</p>
+        <p>Dengan pendekatan inovatif, kami membantu individu, pelajar, mahasiswa, dan calon mitra untuk belajar dan menerapkan hidroponik sebagai solusi urban farming yang ramah lingkungan.</p>
+    </section>
+
+    <!-- Penjelasan Hidroponik -->
+    <section id="hidroponik">
+        <h2>Penjelasan Hidroponik</h2>
+        <p>Hidroponik adalah metode bercocok tanam tanpa menggunakan tanah, di mana tanaman ditanam dalam media inert dan nutrisi disuplai melalui larutan air. Sistem ini sangat cocok untuk wilayah urban karena efisien dalam penggunaan ruang dan air.</p>
+        <p>Keunggulan hidroponik untuk wilayah urban meliputi:</p>
+        <ul>
+            <li>Pemanfaatan lahan terbatas dengan hasil panen maksimal.</li>
+            <li>Penggunaan air yang lebih efisien dibandingkan pertanian konvensional.</li>
+            <li>Produksi sayuran segar sepanjang tahun tanpa tergantung musim.</li>
+            <li>Ramah lingkungan karena mengurangi penggunaan pestisida.</li>
+        </ul>
+        <h3>Pengaturan Media Tanam</h3>
+        <p>Media tanam yang umum digunakan dalam hidroponik meliputi rockwool, netpot, cocopeat, dan perlite. Pengaturan yang benar melibatkan pemilihan media yang sesuai dengan jenis tanaman dan sistem hidroponik yang digunakan, serta memastikan drainase yang baik untuk mencegah akar busuk.</p>
+        <h3>Pengaturan Aliran Air & Nutrisi</h3>
+        <p>Sistem aliran air seperti NFT (Nutrient Film Technique), DFT (Deep Flow Technique), atau Wick System memungkinkan sirkulasi nutrisi AB Mix secara optimal. Kontrol pH (sekitar 5.5-6.5) dan EC (konsentrasi nutrisi) sangat penting untuk kesehatan tanaman.</p>
+    </section>
+
+    <!-- Proses Penanaman -->
+    <section id="proses">
+        <h2>Proses Penanaman</h2>
+        <p>Proses penanaman hidroponik meliputi beberapa tahapan dari penyemaian hingga panen:</p>
+        <ol>
+            <li><strong>Penyemaian:</strong> Bibit ditanam dalam media kecil hingga berkecambah.</li>
+            <li><strong>Persiapan Media:</strong> Siapkan sistem hidroponik dan media tanam yang sesuai.</li>
+            <li><strong>Penanaman:</strong> Pindahkan bibit ke sistem utama dan mulai aliran nutrisi.</li>
+            <li><strong>Perawatan:</strong> Monitor pH, EC, dan kesehatan tanaman secara rutin.</li>
+            <li><strong>Panen:</strong> Panen sayuran saat matang, biasanya dalam 4-6 minggu tergantung jenis tanaman.</li>
+        </ol>
+    </section>
+
+    <!-- Pemasaran -->
+    <section id="pemasaran">
+        <h2>Pemasaran Hasil Panen</h2>
+        <p>Strategi pemasaran hasil hidroponik meliputi penjualan langsung ke konsumen, promosi melalui media sosial, dan kerja sama dengan restoran atau pasar lokal. Kami mendorong penggunaan platform digital untuk menjangkau pelanggan yang peduli dengan produk organik dan segar.</p>
+    </section>
+
+    <!-- Galeri -->
+    <section id="galeri">
+        <h2>Galeri</h2>
+        <div class="gallery">
+            <!-- Placeholder gambar menggunakan URL dummy -->
+            <img src="https://via.placeholder.com/300x200/4CAF50/fff?text=Hidroponik+Urban" alt="Kegiatan Hidroponik">
+            <img src="https://via.placeholder.com/300x200/2196F3/fff?text=Hasil+Panen" alt="Hasil Panen">
+            <img src="https://via.placeholder.com/300x200/4CAF50/fff?text=Sistem+Aliran" alt="Sistem Aliran Air">
+            <img src="https://via.placeholder.com/300x200/2196F3/fff?text=Tanaman+Segar" alt="Tanaman Segar">
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="contact">
+        <h2>Kontak Kami</h2>
+        <p>Alamat: Jatinangor, Sumedang</p>
+        <p>WhatsApp: <a href="https://wa.me/62882000352008" style="color: #fff;">0882000352008</a></p>
+        <p>Email: <a href="mailto:dirgantaraputra924@gmail.com" style="color: #fff;">dirgantaraputra924@gmail.com</a></p>
+        <form>
+            <input type="text" placeholder="Nama Anda" required>
+            <input type="email" placeholder="Email Anda" required>
+            <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Bisma Hidroponik. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk scroll ke section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Animasi scroll menggunakan Intersection Observer
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll untuk navbar links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+    </script>
+</body>
+</html>
